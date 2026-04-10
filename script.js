@@ -147,17 +147,30 @@ function renderWork() {
   WORK.forEach((w) => {
     const article = el("article", { id: w.id, class: "work" });
 
-    const header = el("header", { class: "work-header" });
-    header.appendChild(el("h3", { class: "work-title", html: w.company }));
-    header.appendChild(el("p", { class: "work-tag", html: w.role }));
-    header.appendChild(el("p", { class: "work-desc", html: w.description }));
+    // 🔥 TOP ROW (2-column layout)
+    const top = el("div", { class: "work-top" });
 
-    const frame = el("div", { class: "media-frame" });
+    // LEFT SIDE (text)
+    const left = el("div", { class: "work-left" });
+    left.appendChild(el("h3", { class: "work-title", html: w.company }));
+    left.appendChild(el("p", { class: "work-tag", html: w.role }));
+    left.appendChild(el("p", { class: "work-desc", html: w.description }));
 
-    // ✅ FEATURED HERO MEDIA
+    const tagsWrap = el("div", { class: "tags" });
+    (w.tags || []).forEach(t =>
+      tagsWrap.appendChild(el("span", { class: "tag", html: t }))
+    );
+    left.appendChild(tagsWrap);
+
+    // RIGHT SIDE (featured media)
+    const right = el("div", { class: "work-right" });
     const featured = w.media[0];
+
     if (featured) {
-      const hero = document.createElement(featured.type === "video" ? "video" : "img");
+      const hero = document.createElement(
+        featured.type === "video" ? "video" : "img"
+      );
+
       hero.src = featured.src;
 
       if (featured.type === "video") {
@@ -168,9 +181,14 @@ function renderWork() {
       }
 
       hero.className = "hero-media";
-      frame.appendChild(hero);
+      right.appendChild(hero);
     }
 
+    top.appendChild(left);
+    top.appendChild(right);
+
+    // 🔽 GRID BELOW
+    const frame = el("div", { class: "media-frame" });
     const grid = el("div", { class: "grid" });
 
     w.media.forEach((m, idx) => {
@@ -182,7 +200,6 @@ function renderWork() {
         v.muted = true;
         v.playsInline = true;
 
-        // ✅ hover play
         tile.addEventListener("mouseenter", () => v.play());
         tile.addEventListener("mouseleave", () => v.pause());
 
@@ -198,7 +215,8 @@ function renderWork() {
     });
 
     frame.appendChild(grid);
-    article.appendChild(header);
+
+    article.appendChild(top);
     article.appendChild(frame);
     workList.appendChild(article);
   });

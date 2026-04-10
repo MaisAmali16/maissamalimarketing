@@ -452,3 +452,59 @@ a{ color:inherit; }
 .tile:hover img {
   transform: scale(1.03);
 }
+/* 🔥 NEW: 2-column layout */
+.work-top {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 24px;
+  padding: 22px;
+  align-items: center;
+}
+
+/* Left side text */
+.work-left {
+  text-align: left;
+}
+
+/* Right side media */
+.work-right {
+  display: flex;
+  justify-content: center;
+}
+
+/* Hero media (BIG visual impact) */
+.hero-media {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid rgba(242,245,255,.12);
+  box-shadow: 0 18px 60px rgba(0,0,0,.45);
+}
+
+/* Make grid feel secondary */
+.media-frame {
+  padding-top: 0;
+}
+
+/* Hover interaction */
+.tile img,
+.tile video {
+  transition: transform 0.25s ease;
+}
+
+.tile:hover img,
+.tile:hover video {
+  transform: scale(1.05);
+}
+
+/* 📱 Mobile fix (VERY important) */
+@media (max-width: 800px) {
+  .work-top {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-media {
+    max-height: 360px;
+  }
+}
