@@ -1,163 +1,107 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
   <title>Maiss Amali — Marketing Portfolio</title>
-  <meta name="description" content="Maiss Amali — Marketing portfolio. Selected work across organizations and internships." />
+  <link rel="stylesheet" href="styles.css">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Manrope:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  />
-
-  <link rel="stylesheet" href="styles.css" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <a class="skip-link" href="#intro">Skip to content</a>
 
-  <header class="site-header">
-    <div class="nav-wrap">
-      <a class="brand" href="#intro" aria-label="Go to introduction">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span class="brand-name">Maiss Amali</span>
-      </a>
-
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="#intro">About</a>
-
-        <details class="dropdown">
-          <summary class="dropdown-summary" aria-label="Open work menu">My Work ▾</summary>
-          <div class="dropdown-panel" id="workMenu" role="menu" aria-label="Work menu">
-            <!-- Filled by JS -->
-          </div>
-        </details>
-
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <a class="btn btn-small btn-ghost"
-         href="assets/Maiss-Amali-Resume.pdf"
-         target="_blank"
-         rel="noreferrer noopener">
-        View Resume
-      </a>
-    </div>
-  </header>
-
-  <main>
-    <!-- INTRO -->
-    <section id="intro" class="section intro">
-      <div class="container center">
-        <p class="kicker">Marketing · Content · Digital Media</p>
-        <h1 class="headline">Maiss Amali</h1>
-
-        <p class="summary">
-          I’m Maiss Amali. I’m pursuing a marketing career because I love where creativity becomes
-          something real: a clear message, a strong visual, and a story that people actually want to engage with.
-          I’m especially interested in marketing that feels human while still being intentional,
-          structured, and measurable.
-        </p>
-
-        <div class="intro-actions">
-          <a class="btn btn-primary" href="#work">Explore My Work</a>
-          <a class="btn btn-ghost" href="assets/Maiss-Amali-Resume.pdf" target="_blank" rel="noreferrer noopener">
-            View Resume (PDF)
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- WORK -->
-    <section id="work" class="section">
-      <div class="container center">
-        <h2 class="section-title">Work Samples</h2>
-        <p class="section-subtitle">
-          Click any thumbnail to open a full-screen viewer (optimized for vertical TikTok/Instagram formats).
-        </p>
-
-        <div id="workList" class="work-list" aria-label="Marketing work samples"></div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <div class="container center">
-        <h2 class="section-title">Contact</h2>
-        <p class="section-subtitle">
-          If you’d like to see more details (process, metrics, strategy, or campaigns), feel free to reach out.
-        </p>
-
-        <div class="contact-icons" role="list">
-          <a class="icon-card" role="listitem" href="mailto:maisamali9898@gmail.com" aria-label="Email Maiss Amali">
-            <span class="icon" aria-hidden="true">✉️</span>
-            <div class="icon-text">
-              <span class="icon-title">Email</span>
-              <span class="icon-sub">maisamali9898@gmail.com</span>
-            </div>
-          </a>
-
-          <a class="icon-card" role="listitem"
-             href="https://www.linkedin.com/in/maiss-am-ali"
-             target="_blank" rel="noreferrer noopener"
-             aria-label="Open LinkedIn in a new tab">
-            <span class="icon" aria-hidden="true">in</span>
-            <div class="icon-text">
-              <span class="icon-title">LinkedIn</span>
-              <span class="icon-sub">www.linkedin.com/in/maiss-am-ali</span>
-            </div>
-          </a>
-
-          <a class="icon-card" role="listitem"
-             href="assets/Maiss-Amali-Resume.pdf"
-             target="_blank" rel="noreferrer noopener"
-             aria-label="Open resume PDF">
-            <span class="icon" aria-hidden="true">📄</span>
-            <div class="icon-text">
-              <span class="icon-title">Resume</span>
-              <span class="icon-sub">View PDF</span>
-            </div>
-          </a>
-        </div>
-
-        <div class="resume-row">
-          <a class="btn btn-primary" href="assets/Maiss-Amali-Resume.pdf" target="_blank" rel="noreferrer noopener">
-            View Resume (PDF)
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container center footer-inner">
-      <p>© <span id="year"></span> Maiss Amali</p>
-      <p class="footer-note">Built with HTML, CSS, and JavaScript.</p>
-    </div>
-  </footer>
-
-  <!-- Modal Viewer -->
-  <div class="modal" id="viewer" aria-hidden="true" role="dialog" aria-label="Media viewer">
-    <div class="modal-backdrop" data-close="true"></div>
-
-    <div class="modal-panel" role="document">
-      <button class="modal-close" type="button" aria-label="Close viewer" data-close="true">✕</button>
-
-      <button class="modal-nav left" type="button" aria-label="Previous" id="prevBtn">‹</button>
-      <button class="modal-nav right" type="button" aria-label="Next" id="nextBtn">›</button>
-
-      <div class="modal-media" id="modalMedia"></div>
-
-      <div class="modal-footer">
-        <div class="modal-caption" id="modalCaption"></div>
-        <div class="modal-counter" id="modalCounter"></div>
-      </div>
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-inner">
+    <h2 class="logo">Maiss Amali</h2>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
     </div>
   </div>
+</header>
 
-  <script src="script.js"></script>
+<!-- INTRO -->
+<section id="about" class="intro">
+  <div class="intro-content">
+    <h1>Marketing • Content • Digital Media</h1>
+
+    <p>
+      I’m Maiss Amali. I’m pursuing a marketing career because I love where creativity becomes
+      something real: a clear message, a strong visual, and a story that people actually engage with.
+    </p>
+
+    <p>
+      My work focuses on short-form content, branding, and digital storytelling — especially in
+      environments where attention is limited and clarity matters.
+    </p>
+
+    <p>
+      I’m interested in marketing that feels human while still being intentional, structured,
+      and measurable.
+    </p>
+  </div>
+</section>
+
+<!-- WORK GRID -->
+<section id="work" class="work">
+  <h2>Selected Work</h2>
+
+  <div class="grid">
+
+    <a href="projects/airon.html" class="card">
+      <img src="assets/airon-logo.png">
+      <h3>AIRON AI</h3>
+    </a>
+
+    <a href="projects/dealhunt.html" class="card">
+      <img src="assets/dealhunt-logo.png">
+      <h3>Deal Hunt</h3>
+    </a>
+
+    <a href="projects/wfc.html" class="card">
+      <img src="assets/wfc-logo.png">
+      <h3>Women’s Fitness Club</h3>
+    </a>
+
+    <a href="projects/bookclub.html" class="card">
+      <img src="assets/bookclub-logo.png">
+      <h3>Book Club</h3>
+    </a>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <h2>Contact</h2>
+
+  <div class="contact-grid">
+
+    <a href="mailto:maisamali9898@gmail.com" class="contact-card">
+      <span>Email</span>
+      <p>maisamali9898@gmail.com</p>
+    </a>
+
+    <a href="https://www.linkedin.com/in/maiss-am-ali" target="_blank" class="contact-card">
+      <span>LinkedIn</span>
+      <p>maiss-am-ali</p>
+    </a>
+
+    <div class="contact-card">
+      <span>Phone</span>
+      <p>(your phone here)</p>
+    </div>
+
+    <a href="assets/Maiss-Amali-Resume.pdf" target="_blank" class="contact-card">
+      <span>Resume</span>
+      <p>View PDF</p>
+    </a>
+
+  </div>
+</section>
+
 </body>
 </html>
