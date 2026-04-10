@@ -2,68 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Maiss Amali — Marketing Portfolio</title>
+  <title>Maiss Amali — Portfolio</title>
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&family=Clash+Display:wght@500;600&display=swap" rel="stylesheet">
+  <!-- BETTER FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- NAV -->
+<!-- HEADER -->
 <header class="nav">
   <div class="nav-inner">
-    <h2 class="logo">Maiss Amali</h2>
+
+    <!-- LEFT NAV -->
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#work">Work</a>
       <a href="#contact">Contact</a>
     </div>
+
+    <!-- RIGHT NAME -->
+    <div class="logo">Maiss Amali</div>
+
   </div>
+
+  <!-- 🔥 COLOR LINE -->
+  <div class="nav-line"></div>
 </header>
 
 <!-- INTRO -->
 <section id="about" class="intro">
-  <div class="intro-content">
-    <h1>Marketing • Content • Digital Media</h1>
+  <h1 class="title-gradient">Marketing • Content • Digital Media</h1>
 
-    <p>
-      I’m Maiss Amali. I’m pursuing a marketing career because I love where creativity becomes
-      something real: a clear message, a strong visual, and a story that people actually engage with.
-    </p>
-
-    <p>
-      My work focuses on short-form content, branding, and digital storytelling — especially in
-      environments where attention is limited and clarity matters.
-    </p>
-
-    <p>
-      I’m interested in marketing that feels human while still being intentional, structured,
-      and measurable.
-    </p>
-  </div>
+  <p>
+    I’m Maiss Amali. I’m passionate about marketing where creativity turns into
+    something real — clear messaging, strong visuals, and content people actually engage with.
+  </p>
 </section>
 
-<!-- WORK GRID -->
+<!-- WORK -->
 <section id="work" class="work">
-  <h2>Selected Work</h2>
 
-  <div class="grid">
+  <h2 class="section-title">Discover My Work</h2>
 
-    <a href="projects/airon.html" class="card">
-      <img src="assets/airon-logo.png">
-      <h3>AIRON AI</h3>
-    </a>
+  <!-- TOP ROW -->
+  <div class="grid top">
 
-    <a href="projects/dealhunt.html" class="card">
-      <img src="assets/dealhunt-logo.png">
-      <h3>Deal Hunt</h3>
-    </a>
-
-    <a href="projects/wfc.html" class="card">
-      <img src="assets/wfc-logo.png">
-      <h3>Women’s Fitness Club</h3>
+    <a href="projects/cognition.html" class="card">
+      <img src="assets/cognition-logo.png">
+      <h3>Cognition in Action</h3>
     </a>
 
     <a href="projects/bookclub.html" class="card">
@@ -71,29 +59,68 @@
       <h3>Book Club</h3>
     </a>
 
+    <a href="projects/wfc.html" class="card">
+      <img src="assets/wfc-logo.png">
+      <h3>Women’s Fitness Club</h3>
+    </a>
+
   </div>
+
+  <!-- BOTTOM ROW (CENTERED) -->
+  <div class="grid bottom">
+
+    <a href="projects/airon.html" class="card">
+      <img src="assets/airon-logo.png">
+      <h3>Robo The Virtual Bot</h3>
+    </a>
+
+    <a href="projects/dealhunt.html" class="card">
+      <img src="assets/dealhunt-logo.png">
+      <h3>Deal Hunt</h3>
+    </a>
+
+  </div>
+
 </section>
 
-<div class="contact-grid">
+<!-- CONTACT -->
+<section id="contact" class="contact">
 
-  <a href="https://www.linkedin.com/in/maiss-am-ali" target="_blank" class="contact-btn">
-    → Let’s connect on LinkedIn
-  </a>
+  <h2 class="section-title">Let’s Get in Touch</h2>
 
-  <a href="assets/Maiss-Amali-Resume.pdf" target="_blank" class="contact-btn">
-    → View my resume
-  </a>
+  <div class="contact-row">
 
-  <button class="contact-btn" onclick="copyEmail()">
-    → Copy my email
-  </button>
+    <a href="https://www.linkedin.com/in/maiss-am-ali" target="_blank" class="contact-btn">
+      LinkedIn
+    </a>
 
-  <button class="contact-btn" onclick="copyPhone()">
-    → Copy my phone number
-  </button>
+    <a href="assets/Maiss-Amali-Resume.pdf" target="_blank" class="contact-btn">
+      Resume
+    </a>
 
-</div>
+    <button onclick="copyEmail()" class="contact-btn">
+      Copy Email
+    </button>
+
+    <button onclick="copyPhone()" class="contact-btn">
+      Copy Phone
+    </button>
+
+  </div>
+
 </section>
+
+<script>
+function copyEmail() {
+  navigator.clipboard.writeText("maisamali9898@gmail.com");
+  alert("Email copied!");
+}
+
+function copyPhone() {
+  navigator.clipboard.writeText("YOUR PHONE");
+  alert("Phone copied!");
+}
+</script>
 
 </body>
 </html>
