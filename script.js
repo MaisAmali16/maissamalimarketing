@@ -221,6 +221,15 @@ function renderWork() {
     workList.appendChild(article);
   });
 }
+function copyEmail() {
+  navigator.clipboard.writeText("maisamali9898@gmail.com");
+  alert("Email copied!");
+}
+
+function copyPhone() {
+  navigator.clipboard.writeText("YOUR PHONE");
+  alert("Phone number copied!");
+}
 
 renderMenu();
 renderWork();
