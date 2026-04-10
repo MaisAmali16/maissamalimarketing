@@ -8,10 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Manrope:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -28,40 +25,31 @@
 
       <nav class="nav" aria-label="Primary navigation">
         <a href="#intro">About</a>
-
         <details class="dropdown">
           <summary class="dropdown-summary" aria-label="Open work menu">My Work ▾</summary>
           <div class="dropdown-panel" id="workMenu" role="menu" aria-label="Work menu">
-            <!-- Filled by JS -->
-          </div>
+            </div>
         </details>
-
         <a href="#contact">Contact</a>
       </nav>
 
-      <a class="btn btn-small btn-ghost"
-         href="assets/Maiss-Amali-Resume.pdf"
-         target="_blank"
-         rel="noreferrer noopener">
+      <a class="btn btn-small btn-ghost" href="assets/Maiss-Amali-Resume.pdf" target="_blank" rel="noreferrer noopener">
         View Resume
       </a>
     </div>
   </header>
 
   <main>
-    <!-- INTRO -->
     <section id="intro" class="section intro">
       <div class="container center">
         <p class="kicker">Marketing · Content · Digital Media</p>
         <h1 class="headline">Maiss Amali</h1>
-
         <p class="summary">
           I’m Maiss Amali. I’m pursuing a marketing career because I love where creativity becomes
           something real: a clear message, a strong visual, and a story that people actually want to engage with.
           I’m especially interested in marketing that feels human while still being intentional,
           structured, and measurable.
         </p>
-
         <div class="intro-actions">
           <a class="btn btn-primary" href="#work">Explore My Work</a>
           <a class="btn btn-ghost" href="assets/Maiss-Amali-Resume.pdf" target="_blank" rel="noreferrer noopener">
@@ -71,24 +59,24 @@
       </div>
     </section>
 
-    <!-- WORK -->
     <section id="work" class="section">
-      <div class="container center">
-        <h2 class="section-title">Work Samples</h2>
-        <p class="section-subtitle">
-          Click any thumbnail to open a full-screen viewer (optimized for vertical TikTok/Instagram formats).
-        </p>
+      <div class="container">
+        <div class="center">
+          <h2 class="section-title">Work Samples</h2>
+          <p class="section-subtitle">
+            A selection of my strategic content creation, community engagement, and digital media projects. Click any thumbnail to view full screen.
+          </p>
+        </div>
 
         <div id="workList" class="work-list" aria-label="Marketing work samples"></div>
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact" class="section">
       <div class="container center">
         <h2 class="section-title">Contact</h2>
         <p class="section-subtitle">
-          If you’d like to see more details (process, metrics, strategy, or campaigns), feel free to reach out.
+          If you’d like to see more details, feel free to reach out.
         </p>
 
         <div class="contact-icons" role="list">
@@ -99,33 +87,19 @@
               <span class="icon-sub">maisamali9898@gmail.com</span>
             </div>
           </a>
-
-          <a class="icon-card" role="listitem"
-             href="https://www.linkedin.com/in/maiss-am-ali"
-             target="_blank" rel="noreferrer noopener"
-             aria-label="Open LinkedIn in a new tab">
+          <a class="icon-card" role="listitem" href="https://www.linkedin.com/in/maiss-am-ali" target="_blank" rel="noreferrer noopener" aria-label="Open LinkedIn">
             <span class="icon" aria-hidden="true">in</span>
             <div class="icon-text">
               <span class="icon-title">LinkedIn</span>
-              <span class="icon-sub">www.linkedin.com/in/maiss-am-ali</span>
+              <span class="icon-sub">linkedin.com/in/maiss-am-ali</span>
             </div>
           </a>
-
-          <a class="icon-card" role="listitem"
-             href="assets/Maiss-Amali-Resume.pdf"
-             target="_blank" rel="noreferrer noopener"
-             aria-label="Open resume PDF">
+          <a class="icon-card" role="listitem" href="assets/Maiss-Amali-Resume.pdf" target="_blank" rel="noreferrer noopener" aria-label="Open resume PDF">
             <span class="icon" aria-hidden="true">📄</span>
             <div class="icon-text">
               <span class="icon-title">Resume</span>
               <span class="icon-sub">View PDF</span>
             </div>
-          </a>
-        </div>
-
-        <div class="resume-row">
-          <a class="btn btn-primary" href="assets/Maiss-Amali-Resume.pdf" target="_blank" rel="noreferrer noopener">
-            View Resume (PDF)
           </a>
         </div>
       </div>
@@ -139,18 +113,13 @@
     </div>
   </footer>
 
-  <!-- Modal Viewer -->
   <div class="modal" id="viewer" aria-hidden="true" role="dialog" aria-label="Media viewer">
     <div class="modal-backdrop" data-close="true"></div>
-
     <div class="modal-panel" role="document">
       <button class="modal-close" type="button" aria-label="Close viewer" data-close="true">✕</button>
-
       <button class="modal-nav left" type="button" aria-label="Previous" id="prevBtn">‹</button>
       <button class="modal-nav right" type="button" aria-label="Next" id="nextBtn">›</button>
-
       <div class="modal-media" id="modalMedia"></div>
-
       <div class="modal-footer">
         <div class="modal-caption" id="modalCaption"></div>
         <div class="modal-counter" id="modalCounter"></div>
