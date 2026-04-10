@@ -22,10 +22,10 @@ body {
    📐 LAYOUT
 ========================= */
 section {
-  max-width: 1100px;
+  max-width: 1200px; /* slightly wider */
   margin: auto;
   text-align: center;
-  padding: 90px 30px;
+  padding: 90px 40px;
 }
 
 /* =========================
@@ -36,14 +36,14 @@ h1, h2, h3 {
   letter-spacing: 0.6px;
 }
 
-/* HERO TITLE (white text + colored symbols) */
+/* HERO TITLE */
 .hero-title {
   font-size: 2.9rem;
   margin-bottom: 25px;
   color: #ffffff;
 }
 
-/* Colored ✦ symbols */
+/* SYMBOL */
 .symbol {
   background: linear-gradient(90deg, #ff7a00, #ff2e92, #9d4edd);
   -webkit-background-clip: text;
@@ -59,22 +59,14 @@ h1, h2, h3 {
   position: relative;
 }
 
-/* Accent line under titles */
 .section-title::after {
   content: "";
   display: block;
   width: 60px;
   height: 3px;
   margin: 12px auto 0;
-
   background: linear-gradient(90deg, #ff7a00, #ff2e92, #9d4edd);
   border-radius: 2px;
-}
-
-/* Paragraph styling */
-p {
-  color: #bbb;
-  font-size: 0.95rem;
 }
 
 /* =========================
@@ -94,21 +86,20 @@ p {
   padding: 18px 40px;
 }
 
-/* LOGO (your name) */
 .logo {
   font-family: 'Clash Display', sans-serif;
   font-size: 1.2rem;
   letter-spacing: 2px;
   text-transform: uppercase;
-
   background: linear-gradient(90deg, #ff7a00, #ff2e92);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* NAV LINKS */
+/* ✅ NAV FIX (white + bold) */
 .nav-links a {
-  color: #aaa;
+  color: #ffffff;
+  font-weight: 600;
   margin-left: 20px;
   text-decoration: none;
   font-size: 0.85rem;
@@ -117,7 +108,6 @@ p {
   transition: 0.2s;
 }
 
-/* Hover underline animation */
 .nav-links a::after {
   content: "";
   position: absolute;
@@ -137,7 +127,6 @@ p {
   color: #fff;
 }
 
-/* Gradient separator */
 .nav-line {
   height: 2px;
   width: 100%;
@@ -151,11 +140,13 @@ p {
   margin-bottom: 20px;
 }
 
+/* ✅ ABOUT TEXT FIX (wider + white) */
 .intro p {
-  max-width: 800px;
+  max-width: 1000px;  /* increased from 800 */
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 18px;
+  color: #ffffff; /* force white */
 }
 
 /* =========================
@@ -183,20 +174,25 @@ p {
   display: block;
 }
 
-/* Logo container */
+/* ✅ LOGO CONSISTENCY FIX */
 .card img {
   width: 100%;
   aspect-ratio: 1;
+
   object-fit: contain;
-  padding: 30px;
+  object-position: center;
+
+  padding: 40px; /* balanced */
   background: #0a0a0a;
   border-radius: 18px;
   border: 1px solid #111;
 
+  max-height: 260px; /* 🔥 key fix (bigger cap) */
+
   transition: all 0.35s ease;
 }
 
-/* Hover effect */
+/* Hover */
 .card:hover img {
   transform: scale(1.06);
   box-shadow:
@@ -204,7 +200,6 @@ p {
     0 0 60px rgba(255, 0, 150, 0.2);
 }
 
-/* Card title */
 .card h3 {
   margin-top: 12px;
   font-size: 1.05rem;
@@ -235,7 +230,6 @@ p {
   cursor: pointer;
   font-size: 0.85rem;
   letter-spacing: 0.4px;
-
   transition: all 0.25s ease;
 }
 
@@ -249,6 +243,39 @@ p {
 /* =========================
    📄 PROJECT PAGE
 ========================= */
+
+/* Page title */
+.project h1 {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 3rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 50px;
+  background: linear-gradient(90deg, #ff7a00, #ff2e92, #9d4edd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Constrain standalone videos and images */
+.project > video,
+.project > img {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  max-height: 80vh;
+  margin: 30px auto 10px;
+  border-radius: 16px;
+  background: #111;
+  object-fit: contain;
+}
+
+/* Captions below assets */
+.project > p {
+  max-width: 520px;
+  margin: 0 auto 40px;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
 .feed {
   display: flex;
   flex-direction: column;
@@ -276,7 +303,6 @@ p {
   transform: scale(1.01);
 }
 
-/* Inner grid */
 .item .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -284,7 +310,6 @@ p {
   width: 100%;
 }
 
-/* Caption */
 .caption {
   text-align: center;
   max-width: 600px;
@@ -308,12 +333,60 @@ p {
     gap: 10px;
   }
 
-  .grid.top {
-    grid-template-columns: 1fr;
-  }
-
-  .grid.bottom {
-    flex-direction: column;
-    align-items: center;
-  }
+.grid.top {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px; /* was 30px */
 }
+
+.grid.bottom {
+  display: flex;
+  justify-content: center;
+  gap: 60px; /* was 40px */
+  margin-top: 50px;
+}
+}
+
+.carousel {
+  position: relative;
+  max-width: 520px;
+  margin: 30px auto 10px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel img {
+  width: 100%;
+  flex-shrink: 0;
+  border-radius: 16px;
+  max-height: 80vh;
+  object-fit: contain;
+  background: #111;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 22px;
+  border-radius: 6px;
+  z-index: 2;
+  transition: background 0.2s;
+}
+
+.carousel-btn:hover {
+  background: rgba(255, 46, 146, 0.7);
+}
+
+.carousel-btn.left { left: 10px; }
+.carousel-btn.right { right: 10px; }

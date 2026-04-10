@@ -1,0 +1,72 @@
+<!-- ================= WOMEN'S FITNESS CLUB ================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Women's Fitness Club</title>
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<header class="nav">
+  <div class="nav-inner">
+    <div class="logo">MAISS AMALI</div>
+    <div class="nav-links">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<section class="project">
+<h1>Women's Fitness Club</h1>
+
+<div class="carousel">
+  <button class="carousel-btn left" onclick="moveSlide(this, -1)">&#8249;</button>
+  <div class="carousel-track">
+    <img src="../assets/wfc-1.png" alt="WFC post 1">
+    <img src="../assets/wfc-2.png" alt="WFC post 2">
+    <img src="../assets/wfc-3.png" alt="WFC post 3">
+    <img src="../assets/wfc-4.png" alt="WFC post 4">
+    <img src="../assets/wfc-5.png" alt="WFC post 5">
+    <img src="../assets/wfc-6.png" alt="WFC post 6">
+    <img src="../assets/wfc-7.png" alt="WFC post 7">
+    <img src="../assets/wfc-8.png" alt="WFC post 8">
+  </div>
+  <button class="carousel-btn right" onclick="moveSlide(this, 1)">&#8250;</button>
+</div>
+
+<div class="carousel">
+  <button class="carousel-btn left" onclick="moveSlide(this, -1)">&#8249;</button>
+  <div class="carousel-track">
+    <img src="../assets/wfc-b-1.png" alt="WFC series B post 1">
+    <img src="../assets/wfc-b-2.png" alt="WFC series B post 2">
+    <img src="../assets/wfc-b-3.png" alt="WFC series B post 3">
+    <img src="../assets/wfc-b-4.png" alt="WFC series B post 4">
+    <img src="../assets/wfc-b-5.png" alt="WFC series B post 5">
+    <img src="../assets/wfc-b-6.png" alt="WFC series B post 6">
+    <img src="../assets/wfc-b-7.png" alt="WFC series B post 7">
+  </div>
+  <button class="carousel-btn right" onclick="moveSlide(this, 1)">&#8250;</button>
+</div>
+
+</section>
+
+<script>
+function moveSlide(button, direction) {
+  const carousel = button.parentElement;
+  const track = carousel.querySelector('.carousel-track');
+  const slides = track.children;
+  let index = parseInt(track.getAttribute('data-index') || 0);
+  index += direction;
+  if (index < 0) index = slides.length - 1;
+  if (index >= slides.length) index = 0;
+  track.style.transform = `translateX(-${index * 100}%)`;
+  track.setAttribute('data-index', index);
+}
+</script>
+</body>
+</html>

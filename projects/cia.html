@@ -1,16 +1,61 @@
-<div class="item">
-  <video src="../assets/airon-1.mp4" controls></video>
-
-  <div class="caption">
-    <h3>Hook-driven intro</h3>
-    <p>
-      I structured this video to capture attention within the first 2 seconds.
-      The goal was to immediately communicate value and prevent scrolling.
-    </p>
-
-    <p>
-      I focused on pacing and clarity, making sure each visual element
-      directly supported the message.
-    </p>
+<!-- ================= COGNITION ================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cognition In Action</title>
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<header class="nav">
+  <div class="nav-inner">
+    <div class="logo">MAISS AMALI</div>
+    <div class="nav-links">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
   </div>
+</header>
+
+<section class="project">
+<h1>Cognition In Action</h1>
+
+<video controls src="../assets/cog-1.mp4"></video>
+
+<video controls src="../assets/cog-2.mp4"></video>
+
+<video controls src="../assets/cog-3.mp4"></video>
+
+<div class="carousel">
+  <button class="carousel-btn left" onclick="moveSlide(this, -1)">&#8249;</button>
+  <div class="carousel-track">
+    <img src="../assets/cog-img-1.jpg" alt="Cognition In Action image 1">
+    <img src="../assets/cog-img-2.jpg" alt="Cognition In Action image 2">
+    <img src="../assets/cog-img-3.jpg" alt="Cognition In Action image 3">
+    <img src="../assets/cog-img-4.jpg" alt="Cognition In Action image 4">
+    <img src="../assets/cog-img-5.jpg" alt="Cognition In Action image 5">
+  </div>
+  <button class="carousel-btn right" onclick="moveSlide(this, 1)">&#8250;</button>
 </div>
+
+</section>
+
+<script>
+function moveSlide(button, direction) {
+  const carousel = button.parentElement;
+  const track = carousel.querySelector('.carousel-track');
+  const slides = track.children;
+  let index = parseInt(track.getAttribute('data-index') || 0);
+  index += direction;
+  if (index < 0) index = slides.length - 1;
+  if (index >= slides.length) index = 0;
+  track.style.transform = `translateX(-${index * 100}%)`;
+  track.setAttribute('data-index', index);
+}
+</script>
+</body>
+</html>
