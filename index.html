@@ -2,47 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Maiss Amali — Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
 
-  <!-- BETTER FONTS -->
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 <header class="nav">
   <div class="nav-inner">
 
-    <!-- LEFT NAV -->
+    <!-- LEFT: NAME -->
+    <div class="logo">MAISS AMALI</div>
+
+    <!-- RIGHT: NAV -->
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#work">Work</a>
       <a href="#contact">Contact</a>
     </div>
 
-    <!-- RIGHT NAME -->
-    <div class="logo">Maiss Amali</div>
-
   </div>
-
-  <!-- 🔥 COLOR LINE -->
   <div class="nav-line"></div>
 </header>
 
-<!-- INTRO -->
+<!-- ================= ABOUT ================= -->
 <section id="about" class="intro">
-  <h1 class="title-gradient">Marketing • Content • Digital Media</h1>
+
+  <h1 class="hero-title">
+    Marketing <span class="symbol">✦</span> Content <span class="symbol">✦</span> Digital Media
+  </h1>
 
   <p>
-    I’m Maiss Amali. I’m passionate about marketing where creativity turns into
-    something real — clear messaging, strong visuals, and content people actually engage with.
+    Hi, I’m Maiss Amali — I create digital content that turns ideas into something people actually stop for, watch, and remember.
   </p>
+
+  <p>
+    I’m drawn to the space where creativity meets intention. For me, marketing isn’t just about visuals — it’s about how something is communicated, how quickly it connects, and how it stays with someone after they’ve seen it. That’s what drives the way I approach every project.
+  </p>
+
+  <p>
+    My work spans across digital media production as a whole. From capturing visuals through photography and videography, to shaping them through editing, motion, and sound, I focus on building content that feels cohesive from start to finish. I think about pacing, clarity, and emotional tone just as much as I think about aesthetics.
+  </p>
+
+  <p>
+    Alongside content creation, I also work with web design and development — designing and building spaces where that content lives. This allows me to think beyond individual pieces and consider the full experience: how content is presented, how users interact with it, and how everything comes together as a system.
+  </p>
+
+  <p>
+    Whether it’s a short-form video, a visual campaign, or a digital platform, my goal is always the same — to create work that feels intentional, engaging, and built for real people.
+  </p>
+
 </section>
 
-<!-- WORK -->
-<section id="work" class="work">
+<!-- ================= WORK ================= -->
+<section id="work">
 
   <h2 class="section-title">Discover My Work</h2>
 
@@ -50,32 +70,32 @@
   <div class="grid top">
 
     <a href="projects/cognition.html" class="card">
-      <img src="assets/cognition-logo.png">
+      <img src="assets/cognition-logo.png" alt="Cognition in Action logo">
       <h3>Cognition in Action</h3>
     </a>
 
     <a href="projects/bookclub.html" class="card">
-      <img src="assets/bookclub-logo.png">
+      <img src="assets/bookclub-logo.png" alt="Book Club logo">
       <h3>Book Club</h3>
     </a>
 
     <a href="projects/wfc.html" class="card">
-      <img src="assets/wfc-logo.png">
+      <img src="assets/wfc-logo.png" alt="Women's Fitness Club logo">
       <h3>Women’s Fitness Club</h3>
     </a>
 
   </div>
 
-  <!-- BOTTOM ROW (CENTERED) -->
+  <!-- BOTTOM ROW -->
   <div class="grid bottom">
 
     <a href="projects/airon.html" class="card">
-      <img src="assets/airon-logo.png">
+      <img src="assets/airon-logo.png" alt="Robo AI logo">
       <h3>Robo The Virtual Bot</h3>
     </a>
 
     <a href="projects/dealhunt.html" class="card">
-      <img src="assets/dealhunt-logo.png">
+      <img src="assets/dealhunt-logo.png" alt="Deal Hunt logo">
       <h3>Deal Hunt</h3>
     </a>
 
@@ -83,33 +103,34 @@
 
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="contact">
+<!-- ================= CONTACT ================= -->
+<section id="contact">
 
   <h2 class="section-title">Let’s Get in Touch</h2>
 
   <div class="contact-row">
 
     <a href="https://www.linkedin.com/in/maiss-am-ali" target="_blank" class="contact-btn">
-      LinkedIn
+      Let’s connect on LinkedIn
     </a>
 
     <a href="assets/Maiss-Amali-Resume.pdf" target="_blank" class="contact-btn">
-      Resume
+      View my resume
     </a>
 
     <button onclick="copyEmail()" class="contact-btn">
-      Copy Email
+      Copy email
     </button>
 
     <button onclick="copyPhone()" class="contact-btn">
-      Copy Phone
+      Copy phone
     </button>
 
   </div>
 
 </section>
 
+<!-- ================= JS ================= -->
 <script>
 function copyEmail() {
   navigator.clipboard.writeText("maisamali9898@gmail.com");
@@ -117,7 +138,7 @@ function copyEmail() {
 }
 
 function copyPhone() {
-  navigator.clipboard.writeText("YOUR PHONE");
+  navigator.clipboard.writeText("YOUR PHONE NUMBER");
   alert("Phone copied!");
 }
 </script>

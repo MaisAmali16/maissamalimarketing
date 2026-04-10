@@ -15,16 +15,17 @@ body {
   color: #f5f5f5;
   font-family: 'Sora', sans-serif;
   line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* =========================
    📐 LAYOUT
 ========================= */
 section {
-  max-width: 900px;
+  max-width: 1100px;
   margin: auto;
   text-align: center;
-  padding: 80px 20px;
+  padding: 90px 30px;
 }
 
 /* =========================
@@ -32,32 +33,48 @@ section {
 ========================= */
 h1, h2, h3 {
   font-family: 'Clash Display', sans-serif;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
 }
 
-/* Gradient title (main hero titles) */
-.title-gradient {
-  font-size: 2.6rem;
+/* HERO TITLE (white text + colored symbols) */
+.hero-title {
+  font-size: 2.9rem;
+  margin-bottom: 25px;
+  color: #ffffff;
+}
+
+/* Colored ✦ symbols */
+.symbol {
   background: linear-gradient(90deg, #ff7a00, #ff2e92, #9d4edd);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin: 0 8px;
 }
 
-/* Section titles */
+/* SECTION TITLES */
 .section-title {
-  font-size: 1.6rem;
-  margin-bottom: 40px;
+  font-size: 2rem;
+  margin-bottom: 50px;
   letter-spacing: 1px;
+  position: relative;
 }
 
-/* Subtle glow (use sparingly) */
-.glow {
-  text-shadow: 0 0 12px rgba(255, 100, 200, 0.5);
+/* Accent line under titles */
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin: 12px auto 0;
+
+  background: linear-gradient(90deg, #ff7a00, #ff2e92, #9d4edd);
+  border-radius: 2px;
 }
 
-/* Body text */
+/* Paragraph styling */
 p {
   color: #bbb;
+  font-size: 0.95rem;
 }
 
 /* =========================
@@ -65,35 +82,62 @@ p {
 ========================= */
 .nav {
   background: #000;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .nav-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 18px 40px;
 }
 
-/* Left links */
+/* LOGO (your name) */
+.logo {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  background: linear-gradient(90deg, #ff7a00, #ff2e92);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* NAV LINKS */
 .nav-links a {
   color: #aaa;
-  margin-right: 20px;
+  margin-left: 20px;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  position: relative;
   transition: 0.2s;
 }
 
+/* Hover underline animation */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #ff7a00, #ff2e92);
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
 .nav-links a:hover {
-  color: white;
+  color: #fff;
 }
 
-/* Right name */
-.logo {
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
-/* 🔥 Gradient separator line */
+/* Gradient separator */
 .nav-line {
   height: 2px;
   width: 100%;
@@ -108,24 +152,21 @@ p {
 }
 
 .intro p {
-  margin-bottom: 18px;
-  max-width: 650px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 18px;
 }
 
 /* =========================
    🟦 WORK GRID
 ========================= */
-
-/* Top row (3 items) */
 .grid.top {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
 
-/* Bottom row (centered 2 items) */
 .grid.bottom {
   display: flex;
   justify-content: center;
@@ -152,35 +193,39 @@ p {
   border-radius: 18px;
   border: 1px solid #111;
 
-  transition: 0.3s ease;
+  transition: all 0.35s ease;
 }
 
-/* 🔥 Glow hover (clean + controlled) */
+/* Hover effect */
 .card:hover img {
-  transform: scale(1.05);
+  transform: scale(1.06);
   box-shadow:
-    0 0 25px rgba(255, 120, 0, 0.5),
-    0 0 50px rgba(255, 0, 150, 0.25);
+    0 0 30px rgba(255, 120, 0, 0.45),
+    0 0 60px rgba(255, 0, 150, 0.2);
 }
 
-/* Title under card */
+/* Card title */
 .card h3 {
   margin-top: 12px;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: #ddd;
+  transition: 0.2s;
+}
+
+.card:hover h3 {
+  color: #fff;
 }
 
 /* =========================
-   🔘 CONTACT SECTION
+   🔘 CONTACT
 ========================= */
 .contact-row {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 14px;
 }
 
-/* Button */
 .contact-btn {
   padding: 12px 20px;
   border-radius: 999px;
@@ -188,20 +233,21 @@ p {
   border: 1px solid #222;
   color: white;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.4px;
 
-  transition: 0.25s ease;
+  transition: all 0.25s ease;
 }
 
-/* Hover effect */
 .contact-btn:hover {
   border-color: transparent;
   background: linear-gradient(90deg, #ff7a00, #ff2e92, #9d4edd);
-  box-shadow: 0 0 20px rgba(255, 120, 0, 0.4);
+  box-shadow: 0 0 18px rgba(255, 120, 0, 0.35);
+  transform: translateY(-1px);
 }
 
 /* =========================
-   📄 PROJECT PAGE (FEED)
+   📄 PROJECT PAGE
 ========================= */
 .feed {
   display: flex;
@@ -209,7 +255,6 @@ p {
   gap: 80px;
 }
 
-/* Each item */
 .item {
   display: flex;
   flex-direction: column;
@@ -217,16 +262,21 @@ p {
   gap: 20px;
 }
 
-/* Large media */
 .item video,
 .item img {
   width: 100%;
   max-width: 520px;
   border-radius: 16px;
   background: #111;
+  transition: 0.3s;
 }
 
-/* Grid inside feed */
+.item video:hover,
+.item img:hover {
+  transform: scale(1.01);
+}
+
+/* Inner grid */
 .item .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
